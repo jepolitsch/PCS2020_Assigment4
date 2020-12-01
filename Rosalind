@@ -94,12 +94,18 @@ print(*output)
 8) REVP
 9) SPLC
 10) LEXF
-11) FIB (NOT FINISHED)
+11) FIB
 
 def fib(n, k):
     p, c = 1,1
     for x in range(n-1):
         c, p = p, p+(c*k)
     return(c)
+    
+data = open('rosalind_fib.txt', 'r')
+line = data.readlines()
+first = line[0].split()
+n, k = int(first[0]), int(first[1])
+print(fib(n, k))
     
 12) LGIS
