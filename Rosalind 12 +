@@ -194,8 +194,32 @@ dna_just = first[1]
 
 9) SPLC
 
+def splc(coding, exons):
+    code = str(coding)
+    exons = list(exons)
+    for k in exons:
+            code = code.replace(k, '')
+    rna_coding = RNA(code)
+    prot_coding = prot(rna_coding)
+    return prot_coding
+
+input_formated = fasta('rosalind_splc.txt', 'results.txt')
+dna_just = []
+coding = input_formated[0][1]
+for x in range(1, len(input_formated)):
+    dna_just.insert(x, input_formated[x][1])
+
+print(splc(coding, dna_just))
 
 10) LEXF
+
+def lexf(string, n):
+    result = open('results.txt', 'w')
+    p = list(itertools.product(string, repeat=n))
+    for x in p:
+        result.writelines(''.join(x))
+        result.writelines('\n')
+        
 11) FIB
 
 def fib(n, k):
