@@ -236,7 +236,7 @@ print(fib(n, k))
     
 12) LGIS
 
-def lis(a):
+def lgis(a):
     increasing = []
     decreasing = []
     for (k,v) in enumerate(a):
@@ -251,7 +251,7 @@ def lis(a):
 inp = open('rosalind_lgis.txt', 'r')
 line = inp.readlines()
 string = list(map(int, line[1].strip().split()))
-n = (lis(string))
+n = (lgis(string))
 
 **13) HAMM
 
