@@ -236,6 +236,23 @@ print(fib(n, k))
     
 12) LGIS
 
+def lis(a):
+    increasing = []
+    decreasing = []
+    for (k,v) in enumerate(a):
+        inc_sub = list(max([increasing[i] for (i, n) in enumerate(a[:k]) if n < v] or [[]], key=len) + [v])
+        increasing.append(inc_sub)
+    for (k,v) in enumerate(a):
+        dec_sub = list(max([decreasing[i] for (i, n) in enumerate(a[:k]) if n > v] or [[]], key=len) + [v])
+        decreasing.append(dec_sub)
+    print((inc_sub))
+    print((dec_sub))
+
+inp = open('rosalind_lgis.txt', 'r')
+line = inp.readlines()
+string = list(map(int, line[1].strip().split()))
+n = (lis(string))
+
 **13) HAMM
 
 def hamm(one, two):
